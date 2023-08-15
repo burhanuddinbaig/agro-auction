@@ -1,0 +1,152 @@
+BaseUrl for Profile pic
+http://localhost:8000/assets/profilePicture/nameFromDB
+
+
+BaseUrl for products pic
+http://localhost:8000/assets/products/nameFromDB
+
+
+signUp
+
+localhost:8000/api/users/singUp
+
+payload
+{
+    "username":"asadaa",
+    "email":"asad@gmail.com",
+    "password":"test123",
+    "role": "User"
+}
+
+login
+Post request
+localhost:8000/api/users/login
+payload
+{
+    "email": "asad@gmail.com",
+    "password":"test123"
+}
+
+check Session
+localhost:8000/api/users/checkSession
+set Header Authorization and uses Bearer + token From Login
+
+you will details of logged in user, if not then force user to login again
+
+
+Add Product
+localhost:8000/api/users/addProduct
+method post
+payload
+
+{
+"title":"test",
+"description":"tsting",
+"rate":"1000",
+"quantity":"20",
+"userId":"1"
+}
+
+
+Get All Products
+
+localhost:8000/api/users/getAllProducts
+
+Get Single Product
+GET Req
+PAram = id
+localhost:8000/api/users/getSingleProduct/:id 
+
+
+List on Auction
+
+localhost:8000/api/users/listOnAuction
+Method  post
+payload
+
+{
+    "userId":"1",
+    "productId":"3",
+    "reservePrice":"10",
+    "quantity":"20"
+  
+}
+
+Add Bidd
+
+localhost:8000/api/users/addBid
+Method  post
+payload
+
+{
+    "userId":"2",
+    "productId":"3",
+    "price":"500",
+      "endTime" : "123124",
+      "auctionId": "2"
+}
+
+update user profile
+method post 
+payload 
+    {
+    "description":"this is a test",
+    "cnic":"712124-232-2",
+    "location":"amphary",
+    "email":"test@gmail.com",
+    "userId": "3"
+}
+
+get single user 
+GET Req
+PAram = id
+http://localhost:8000/api/users/getSingleUser/:id
+
+
+delete user
+GET Req
+PAram = userId
+http://localhost:8000/api/users/deleteUser/:userId
+
+
+delete product
+GET Req
+PAram = productId
+http://localhost:8000/api/users/deleteProduct/:productId
+
+search product
+method get
+query param = title 
+eg below
+http://localhost:8000/api/users/searchProduct?title=test
+
+get All users
+
+http://localhost:8000/api/users/getAllUsers
+
+
+upload profile pic
+Method Post
+localhost:8000/api/users/uploadProfilePic
+form data
+userId, file
+
+user created products
+method get
+param = userId
+eg
+http://localhost:8000/api/users/createdProducts/:userId
+
+Settle Auction
+
+Method post
+
+payload
+
+{
+    "productId": "3" ,
+    "auctionId": "2",
+    "reserveQuantity":"20"
+}
+
+localhost:8000/api/users/settleAuction
